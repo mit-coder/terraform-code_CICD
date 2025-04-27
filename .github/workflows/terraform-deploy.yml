@@ -9,7 +9,7 @@ on:
 
 jobs: 
     terraform:
-        runs-on: ubunut-latest
+        runs-on: ubuntu-latest
         steps:
           - name: Checkuot code
             uses: actions/checkout@v4
