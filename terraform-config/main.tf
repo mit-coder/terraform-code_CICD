@@ -1,5 +1,5 @@
-resource "azurerm_resource_group" "demo-rg" {
-  count    = 10
+resource "azurerm_resource_group" "demo-rg11" {
+  count    = 2
   name     = "mit${count.index}"
   location = var.eastus
 
