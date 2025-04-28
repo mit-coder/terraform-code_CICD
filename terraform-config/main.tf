@@ -13,7 +13,7 @@ resource "azurerm_resource_group" "demo-rg" {
 }
 
 resource "azurerm_storage_account" "mit-stg" {
-  name = "mithileshNokia111"
+  name = "mithileshnokia111"
   resource_group_name = azurerm_resource_group.demo-rg.name
   location = "eastus"
   account_replication_type = "LRS"
