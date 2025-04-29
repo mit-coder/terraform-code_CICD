@@ -38,6 +38,15 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Terraform Init
+        working-directory: ./terraform-config
+        run: terraform init
       
       
       - name: Terraform Plan
@@ -54,12 +63,20 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
-      
-      
+
       - name: Azure Login
         uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Terraform Init
+        working-directory: ./terraform-config
+        run: terraform init
+      
+      
+      - name: Terraform Plan
+        working-directory: ./terraform-config
+        run: terraform plan
 
       - name: Terraform Apply
         working-directory: ./terraform-config
